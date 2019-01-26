@@ -1,0 +1,35 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+<section id="banner">
+  <h1>Lista de Noticias</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/home']">Voltar a Home</a>
+<div *ngFor="let noticia of listaNoticias">
+  <div class="box">
+
+    <h2>{{noticia.titulo}}</h2>
+    
+      <div class="imgcenter"><img class="imagens" [src]="noticia.imagem"></div>
+      
+   
+    <br>
+    <td class="texto">{{noticia.descricao}}
+      <br>
+      <br> Autor: {{noticia.autor}}
+      <br>
+      <br> Data de publicação: {{noticia.created_at}}</td>
+    <br>
+  </div>
+</div>
+<hr class="major" />
+<tfoot>
+  <tr>Total de (
+    <td *ngIf="listaNoticias.length==0">
+      Nenhuma Noticias lançada</td>
+    <td *ngIf="listaNoticias.length!=0">
+      {{listaNoticias.length}}
+    </td>
+    <td colspan="2">) Noticias Postadas.</td>
+  </tr>
+</tfoot>

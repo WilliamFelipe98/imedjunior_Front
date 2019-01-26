@@ -1,0 +1,46 @@
+<section id="banner">
+  <h1>Lista de Despesas</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<section id="one" class="wrapper">
+  <div class="inner">
+    <h4>Cadastro de Despesas</h4>
+    <div class="table-wrapper">
+      <form [formGroup]="formulario" novalidate>
+        <div class="row uniform">
+          <div class="6u 12u$(xsmall)">
+            <label for="">Descrição da despesa</label>
+            <input type="text" placeholder="descricao" formControlName="descricao" />
+          </div>
+          <div class="6u 12u$(xsmall)">
+            <label  placeholder="usuario" for="exampleFormControlSelect1">Usuario</label>
+            <select formControlName="usuario" class="form-control" id="exampleFormControlSelect1">
+              <option *ngFor="let usuario of listaUsuarios" [value]="usuario.id">{{usuario.nome}}</option>
+            </select>
+          </div>
+          <!--One -->
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Valor </label>
+            <input type="text " placeholder="valor" formControlName="valor" />
+          </div>
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Data</label>
+            <input type="date " placeholder="data" formControlName="data" />
+          </div>
+          <div class="12u$ ">
+            <ul class="actions ">
+              <li>
+                <input class="button special" type="button" value="Salvar" (click)="salvar(formulario)" [disabled]="!formulario.valid" />
+              </li>
+              <li>
+                <input type="reset" value="Limpar" class="alt" />
+              </li>
+            </ul>
+            <a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

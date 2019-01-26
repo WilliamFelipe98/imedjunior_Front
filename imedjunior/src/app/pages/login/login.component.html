@@ -1,0 +1,16 @@
+<section id="banner">
+  <h1></h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+
+<div class="box person">
+  <div class="inner">
+    <h2>Login</h2>
+    <label for="exampleInputNome">Usuario</label>
+    <input class="form-control" [(ngModel)]="nome" type="text">
+    <label for="exampleInputPassword">Senha</label>
+    <input [(ngModel)]="senha" type="password">
+    <br>
+    <button class="button special" (click)="login()">Logar</button>
+  </div>
+</div>

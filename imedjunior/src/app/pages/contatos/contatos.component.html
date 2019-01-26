@@ -1,0 +1,49 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+<section id="banner">
+  <h1>Lista de Contatos Recebidos</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+
+<h2>Lista de Contatos</h2>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+<div *ngFor="let contato of listaContatos">
+  <div class="box">
+
+    <h4>ID do contato: {{contato.id}}</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <td>Mensagem: {{contato.descricao}} </td>
+        </div>
+        <div class="col">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <td>Nome: {{contato.nome}}</td>
+        </div>
+        <div class="col">
+          <td>Email: {{contato.email}}</td>
+        </div>
+        <div class="col">
+          <td>Telefone {{contato.telefone}} </td>
+        </div>
+        <div class="col">
+            <td>Data de contato: {{contato.created_at}}</td>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<tfoot>
+  <tr>
+    <td *ngIf="listaContatos.length==0">
+      Nenhuma contato lançada</td>
+    <td *ngIf="listaContatos.length!=0">
+      {{listaContatos.length}}
+    </td>
+    <td colspan="2">Total de Contatos</td>
+  </tr>
+</tfoot>

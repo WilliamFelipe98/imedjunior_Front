@@ -1,0 +1,47 @@
+<section id="banner">
+  <h1>Lista de Noticias Interna</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<section id="one" class="wrapper">
+  <div class="inner">
+    <h4>Cadastro de Noticia</h4>
+    <div class="table-wrapper">
+      <form [formGroup]="formulario" novalidate>
+        <div class="row uniform">
+          <div class="6u 12u$(xsmall)">
+            <label for="">Titulo</label>
+            <input type="text" placeholder="titulo" formControlName="titulo" />
+          </div>
+          <div class="6u 12u$(xsmall)">
+            <label for="">Descrição da Noticia</label>
+            <textarea  class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descricao" formControlName="descricao"></textarea>
+          </div>
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Data</label>
+            <input type="text " placeholder="data" formControlName="data" />
+          </div>
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Autor </label>
+            <input type="text " placeholder="autor" formControlName="autor" />
+          </div>
+          <div class="file btn btn-lg btn-primary">
+            <label for=" ">Upload de imagem </label>
+            <input name="imagem" type="file" value="">
+          </div>
+          <div class="12u$ ">
+            <ul class="actions ">
+              <li>
+                <input class="button special" type="button" value="Salvar" (click)="salvar(formulario)" [disabled]="" />
+              </li>
+              <li>
+                <input type="reset" value="Limpar" class="alt" />
+              </li>
+            </ul>
+            <a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

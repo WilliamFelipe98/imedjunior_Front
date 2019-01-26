@@ -1,0 +1,29 @@
+.imagens{
+    width: 25rem;
+}
+th{
+    color: black;
+}
+td{
+    color: black;
+}
+tr{
+    color: black;
+}
+a{
+    color: black;
+}
+.texto{
+    text-align: left;
+
+}
+h2{
+    
+    color: black;
+    text-align: center
+}
+
+.imgcenter{
+
+    text-align:center;
+}

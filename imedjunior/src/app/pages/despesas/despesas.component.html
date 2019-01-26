@@ -1,0 +1,52 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+<section id="banner">
+  <h1>Lista de Despesas</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+
+<h2>Lista de Despesas</h2>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/despesa']">Novo Registro</a>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Usuario</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Data de criação</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let despesa of listaDespesas">
+        <td>{{despesa.id}}</td>
+        <td>{{despesa.descricao}}</td>
+        <td>{{despesa.usuario}}</td>
+        <td>{{despesa.valor}}</td>
+        <td>{{despesa.data}}</td>
+        <td>{{despesa.created_at}}</td>
+
+        <td>
+          <button (click)='excluir(despesa.id)'class="icon fas fa-trash button special">Excluir</button>
+          <button [routerLink]="['/despesa',despesa.id]"class="icon fas fa-edit button special" >Editar</button>
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td *ngIf="listaDespesas.length==0">
+          Nenhuma despesa lançada</td>
+        <td *ngIf="listaDespesas.length!=0">
+            {{listaDespesas.length}}
+        </td>
+        <td colspan="2">Total de Despesas</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

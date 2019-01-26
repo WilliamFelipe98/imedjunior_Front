@@ -1,0 +1,43 @@
+<section id="banner">
+  <h1>Lista de Usuarios</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<section id="one" class="wrapper">
+  <div class="inner">
+    <h4>Cadastro de Usuario</h4>
+    <div class="table-wrapper">
+      <form [formGroup]="formulario" novalidate>
+        <div class="row uniform">
+          <div class="6u 12u$(xsmall)">
+            <label for="">Nome</label>
+            <input type="text" placeholder="nome" formControlName="nome" />
+          </div>
+          <div class="6u 12u$(xsmall)">
+            <label for="">Telefone</label>
+            <input type="text" placeholder="telefone" formControlName="telefone" />
+          </div>
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Login</label>
+            <input type="text " placeholder="login" formControlName="login" />
+          </div>
+          <div class="6u 12u$(xsmall) ">
+            <label for=" ">Senha </label>
+            <input type="text " placeholder="senha" formControlName="senha" />
+          </div>
+          <div class="12u$ ">
+            <ul class="actions ">
+              <li>
+                <input class="button special"  type="button" value="Salvar" (click)="salvar(formulario)" [disabled]="!formulario.valid" />
+              </li>
+              <li>
+                <input type="reset" value="Limpar" class="alt" />
+              </li>
+            </ul>
+            <a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

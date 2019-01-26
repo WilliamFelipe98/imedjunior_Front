@@ -1,0 +1,50 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+<section id="banner">
+  <h1>Lista de Noticias </h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<h2>Lista de Noticias Conhecidas</h2>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/noticia']">Novo Registro</a>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Descrição</th>
+        <th>Data</th>
+        <th>Autor</th>
+        <th>Data de criação</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let noticia of listaNoticias">
+        <td>{{noticia.id}}</td>
+        <td>{{noticia.titulo}}</td>
+        <td>{{noticia.descricao}}</td>
+        <td>{{noticia.data}}</td>
+        <td>{{noticia.autor}}</td>
+        <td>{{noticia.created_at}}</td>
+        <td>
+          <button (click)='excluir(noticia.id)'class="icon fas fa-trash button special">Excluir</button>
+          <button [routerLink]="['/noticia',noticia.id]"class="icon fas fa-edit button special">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td *ngIf="listaNoticias.length==0">
+              Nenhuma Noticias lançada</td>
+            <td *ngIf="listaNoticias.length!=0">
+                {{listaNoticias.length}}
+            </td>
+            <td colspan="2">Total de Noticias</td>
+          </tr>
+    </tfoot>
+  </table>
+</div>

@@ -1,0 +1,46 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
+<section id="banner">
+  <h1>Lista de Usuarios</h1>
+  <p>Criado pela CC da IMED.</p>
+</section>
+<h2>Lista de Usuarios Conhecidos</h2>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/usuario']">Novo Registro</a>
+<a _ngcontent-c3="" class="button special" [routerLink]="['/homelogin']">Voltar a HomeLogin</a>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Login</th>
+        <th>Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listaUsuarios">
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.telefone}}</td>
+        <td>{{usuario.login}}</td>
+        <td>
+          <button (click)='excluir(usuario.id)'class="icon fas fa-trash button special">Excluir</button>
+          <button [routerLink]="['/usuario',usuario.id]"class="icon fas fa-edit button special">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td *ngIf="listaUsuarios.length==0">
+              Nenhum Usuario Lançado</td>
+            <td *ngIf="listaUsuarios.length!=0">
+                {{listaUsuarios.length}}
+            </td>
+            <td colspan="2">Total de Usuarios</td>
+          </tr>
+    </tfoot>
+  </table>
+</div>
